@@ -658,18 +658,19 @@ se.gameReady = function () {
 	tutorial_6.push([
 		new Rect(0,0, canvas.height, canvas.width, 'rgba(0, 0, 3, 0.5)'),
 		new Sprite("balon_msg", 200,200), 	bt_next_tutorial, bt_close_tutorial, 
-		new Text('Ok, pelo visto teremos que', 260, 260, '#000', 24),
-		new Text('utilizar o comando desempilhar!', 240, 300, '#000', 24),
+		new Text('Гаразд, мабуть, ми повинні', 260, 255, '#000', 24),
+		new Text('використати команду', 240, 285, '#000', 24),
+        new Text('"ПРИБРАТИ ЗВЕРХУ"', 240, 315, '#000', 24),
 		new Sprite("button_stack_pop", 300, 530, 60, 60)
 	]);
 	
 	tutorial_6.push([
 		new Rect(0,0, canvas.height, canvas.width, 'rgba(0, 0, 3, 0.5)'),
 		new Sprite("balon_msg", 200,200), 	bt_next_tutorial, bt_close_tutorial, bt_prior_tutorial,
-		new Text('Ao desempilhar um bloco, você', 240, 260, '#000', 24),
-		new Text('ganha mais 1 bloco para empilhar.', 225, 300, '#000', 24),
+		new Text('Розбираючи блок,', 240, 260, '#000', 24),
+		new Text('ви отримуєте ще 1 блок для складання.', 225, 285, '#000', 24),
 		new Rect(canvas.width - 260, 120, 40, 200, '#30415d'),
-		new Text('Principal', canvas.width - 240, 145, '#fff'),
+		new Text('Блоки', canvas.width - 240, 145, '#fff'),
 		new Sprite("gui_block", canvas.width - 130, 125, 25,25),
 		new Text("x0", canvas.width - 100, 147, "white", 25)
 
@@ -691,15 +692,17 @@ se.gameReady = function () {
 	tutorial_9.push([
 		new Rect(0,0, canvas.height, canvas.width, 'rgba(0, 0, 3, 0.5)'),
 		new Sprite("balon_msg", 200,200), 	bt_next_tutorial, bt_close_tutorial, 	
-		new Text('Uau! Um item.', 320, 260, '#000', 25),
-		new Text('Para capturar, passe pela sua posição.', 230, 300, '#000', 20)
+		new Text('Вау! Предмет.', 320, 255, '#000', 25),
+		new Text('Ви можете отримати його', 230, 285, '#000', 20),
+        new Text('на відповідній клітці', 230, 315, '#000', 20)
 	]);
 
 	tutorial_9.push([
 		new Rect(0,0, canvas.height, canvas.width, 'rgba(0, 0, 3, 0.5)'),
 		new Sprite("balon_msg", 200,200), 	bt_next_tutorial, bt_close_tutorial, bt_prior_tutorial,
-		new Text('Você poderá usar o item', 280, 260, '#000', 25),
-		new Text('com o comando Adicionar item na cena.', 230, 300, '#000', 20),
+		new Text('Ви можете використати його', 280, 255, '#000', 25),
+		new Text('за допомогою команди "ДОДАТИ', 230, 285, '#000', 20),
+        new Text('ЕЛЕМЕНТ ДО СЦЕНИ"', 230, 315, '#000', 20),
 		new Sprite("button_set_item", 510, 530, 60, 60)
 	]);
 	
