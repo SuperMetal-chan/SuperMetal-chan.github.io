@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85007db3-23d8-4840-8ad3-4564200b1a97" name="Default" comment="Different edits">
+    <list default="true" id="85007db3-23d8-4840-8ad3-4564200b1a97" name="Default" comment="Fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm-game/scripts/level.js" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm-game/scripts/level.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +116,7 @@
       <workItem from="1667898939456" duration="2766000" />
       <workItem from="1667906880141" duration="1873000" />
       <workItem from="1667911764796" duration="9613000" />
-      <workItem from="1667925538305" duration="4964000" />
+      <workItem from="1667925538305" duration="5609000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1667911804493</created>
@@ -291,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667946016746</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Fix">
+      <created>1667946583203</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1667946583203</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -340,7 +349,8 @@
     <MESSAGE value="Edit text" />
     <MESSAGE value="Minor edits" />
     <MESSAGE value="Different edits" />
-    <option name="LAST_COMMIT_MESSAGE" value="Different edits" />
+    <MESSAGE value="Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/log/log.js">
