@@ -546,8 +546,8 @@ se.gameReady = function () {
 	tutorial_1.push([
 		new Rect(0,0, canvas.height, canvas.width, 'rgba(0, 0, 3, 0.5)'),
 		new Sprite("balon_msg", 200,200), bt_next_tutorial, bt_close_tutorial,	bt_prior_tutorial,
-		new Text('Для цього скористайтеся командами ', 230, 260, '#000', 24),
-		new Text('руху.', 230, 290, '#000', 24),
+		new Text('Для цього скористайтеся', 230, 260, '#000', 24),
+		new Text('командами руху.', 230, 290, '#000', 24),
 		new Sprite("button_left", 90, 530, 60, 60),
 		new Sprite("button_forward", 20, 530, 60, 60),
 		new Sprite("button_right", 160, 530, 60, 60)
@@ -556,7 +556,7 @@ se.gameReady = function () {
 	tutorial_1.push([
 		new Rect(0,0, canvas.height, canvas.width, 'rgba(0, 0, 3, 0.5)'),
 		new Sprite("balon_msg", 200,200), 	bt_next_tutorial, bt_close_tutorial,bt_prior_tutorial,	
-		new Text('Скористайтеся кнопкою "Грати", ', 230, 260, '#000', 24),
+		new Text('Скористайтеся кнопкою "Пуск", ', 230, 260, '#000', 24),
 		new Text('щоб запустити сцену.', 230, 290, '#000', 24),
 		new Sprite("button_play",  canvas.width - 300, 20, 70, 70)
 	]);
@@ -622,15 +622,15 @@ se.gameReady = function () {
 		new Sprite("balon_msg", 200,200), 	bt_next_tutorial, bt_close_tutorial, bt_prior_tutorial,	new Text('При чому на тому ж рівні!', 230 , 250, '#000', 25),
 		new Sprite( [anim2] , 380, 260, 60, 60)
 	]);
-	
-	tutorial_3.push([
-		new Rect(0,0, canvas.height, canvas.width, 'rgba(0, 0, 3, 0.5)'),
-		new Sprite("balon_msg", 200,200), 	bt_next_tutorial, bt_close_tutorial, bt_prior_tutorial,	
-		new Text('Щоб забратись на стек, ', 230, 255, '#000', 25),
-		new Text('скористайтесь командою ', 230, 280, '#000', 25),
-        new Text('"ЗАБРАТИСЬ"', 230, 305, '#000', 25),
-		new Sprite("button_stack_character_push", 440, 530, 60, 60)
-	]);
+
+    tutorial_3.push([
+        new Rect(0,0, canvas.height, canvas.width, 'rgba(0, 0, 3, 0.5)'),
+        new Sprite("balon_msg", 200,200), 	bt_next_tutorial, bt_close_tutorial, bt_prior_tutorial,
+        new Text('Щоб забратись на стек, ', 230, 255, '#000', 25),
+        new Text('скористайтесь командою ', 230, 290, '#000', 25),
+        new Text('"ПОКЛАСТИ КОДЕБО"', 230, 315, '#000', 25),
+        new Sprite("button_stack_character_push", 440, 530, 60, 60)
+    ]);
 	
 	
 	tutorial_3.push([
