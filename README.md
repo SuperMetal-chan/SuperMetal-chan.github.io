@@ -1,1 +1,1 @@
-[Link](https://supermetal-chan.github.io/)!
+[Link!](https://supermetal-chan.github.io/)
