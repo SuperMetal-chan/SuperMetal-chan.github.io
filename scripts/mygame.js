@@ -638,7 +638,7 @@ se.gameReady = function () {
 		new Sprite("balon_msg", 200,200), 	bt_next_tutorial, bt_close_tutorial, bt_prior_tutorial,	
 		new Text('Щоб спустити Кодебо', 230, 255, '#000', 25),
 		new Text('скористайтеся командою', 230, 280, '#000', 25),
-        new Text('"ЗІЙТИ"', 230, 305, '#000', 25),
+        new Text('"ПРИБРАТИ ЗВЕРХУ"', 230, 305, '#000', 25),
 		new Sprite("button_stack_pop", 370, 530, 60, 60)
 	]);
 	
