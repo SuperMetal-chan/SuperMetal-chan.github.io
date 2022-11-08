@@ -667,7 +667,7 @@ se.gameReady = function () {
 	tutorial_6.push([
 		new Rect(0,0, canvas.height, canvas.width, 'rgba(0, 0, 3, 0.5)'),
 		new Sprite("balon_msg", 200,200), 	bt_next_tutorial, bt_close_tutorial, bt_prior_tutorial,
-		new Text('Розбираючи блок,', 240, 260, '#000', 24),
+		new Text('Розбираючи блок, ви отримуєте', 230, 260, '#000', 24),
 		new Text('ви отримуєте ще 1 блок для складання.', 225, 285, '#000', 24),
 		new Rect(canvas.width - 260, 120, 40, 200, '#30415d'),
 		new Text('Блоки', canvas.width - 240, 145, '#fff'),
