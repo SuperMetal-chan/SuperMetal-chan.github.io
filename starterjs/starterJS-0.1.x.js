@@ -56,7 +56,7 @@ Animation.prototype.verifySprites = function (sprites) {
             var sprite_temp =  se.loader.getAssets(sprites[i]) ;
 
             if((!sprite_temp instanceof Image) || (sprite_temp == null)){
-                throw new Error("Ocorreu um erro ao carregar a imagem" + sprite_temp + ". Verifique o nome adicionado aos resources");
+                throw new Error("Під час завантаження зображення сталася помилка" + sprite_temp + ". Перевірте назву, додану до ресурсів");
             }else{
                 this.sprites.push(sprite_temp);
             }
@@ -65,7 +65,7 @@ Animation.prototype.verifySprites = function (sprites) {
     } else if(typeof sprites == "string"){
 			var sprite_temp =  se.loader.getAssets(sprites) ;
             if((!sprite_temp instanceof Image) || (sprite_temp == null)){
-                throw new Error("Ocorreu um erro ao carregar a imagem" + sprite_temp + ". Verifique o nome adicionado aos resources");
+                throw new Error("Під час завантаження зображення сталася помилка" + sprite_temp + ". Перевірте назву, додану до ресурсів");
             }else{
                 this.sprites.push(sprite_temp);
             }
@@ -77,7 +77,6 @@ Animation.prototype.verifySprites = function (sprites) {
 }
 	
 /**
-* Inicia a sequência da animação com tempo
 * @method
 */
 Animation.prototype.start = function () {
@@ -87,7 +86,6 @@ Animation.prototype.start = function () {
 }
 
 /**
-* Update da animação
 * @method
 */
 Animation.prototype.update = function () {
