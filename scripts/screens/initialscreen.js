@@ -9,7 +9,7 @@ InitialScreen.prototype.start = function(){
 	this.scene.setFunctionStart(function () {
 
 		var anim =  new Animation();
-		anim.insertRepeatAnimation( "logo_fapesb", 10  );
+		//anim.insertRepeatAnimation( "logo_fapesb", 10  );
 		anim.insertAnimation( "fadein", null, 10 );
 		anim.setLoop(false);
 		

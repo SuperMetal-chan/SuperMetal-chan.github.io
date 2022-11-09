@@ -56,8 +56,8 @@ Animation.prototype.verifySprites = function (sprites) {
             var sprite_temp =  se.loader.getAssets(sprites[i]) ;
 
             if((!sprite_temp instanceof Image) || (sprite_temp == null)){
-                throw new Error("Під час завантаження зображення сталася помилка" + sprite_temp + ". Перевірте назву, додану до ресурсів");
-            }else{
+                throw new Error("Під час завантаження зображення сталася помилка" + sprite_temp + ". Перевірте назву, додану до ресурсів.");
+            } else {
                 this.sprites.push(sprite_temp);
             }
         }
