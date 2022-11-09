@@ -352,6 +352,12 @@ se.setResources = function () {
     'logo/unifacs.png ',
     'image'
   );
+
+    this.loader.addResource(
+        'logo_fapesb',
+        'logo/fapesb.png ',
+        'image'
+    );
   
  this.loader.addResource(
     'logo_anim1',
