@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="85007db3-23d8-4840-8ad3-4564200b1a97" name="Default" comment="Fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bases.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/starterjs/starterJS-0.1.x.js" beforeDir="false" afterPath="$PROJECT_DIR$/starterjs/starterJS-0.1.x.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm-game/scripts/level.js" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm-game/scripts/level.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +17,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/algorithm-game" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -88,16 +87,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts/gameobject" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\Diploma\CodeBo-The-Game\scripts\gameobject" />
@@ -117,7 +112,8 @@
       <workItem from="1667906880141" duration="1873000" />
       <workItem from="1667911764796" duration="9613000" />
       <workItem from="1667925538305" duration="7257000" />
-      <workItem from="1667991121302" duration="3521000" />
+      <workItem from="1667991121302" duration="4080000" />
+      <workItem from="1668002047364" duration="295000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1667911804493</created>
@@ -350,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668000443255</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Fix">
+      <created>1668001395769</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1668001395769</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
