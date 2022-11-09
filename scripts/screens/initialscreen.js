@@ -38,7 +38,7 @@ InitialScreen.prototype.start = function(){
 			
 			var sp3 = new Sprite( [anim] , 270, 250, 640, 88);
 			
-		}, 2000);
+		}, 3000);
 		
 		setTimeout( 
 		function(){  
