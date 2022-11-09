@@ -1,6 +1,3 @@
-/*
-Representa a tela de menu
-*/
 function MapMenu(isActive) {
 	this.scene =  new Scene(undefined, isActive);
 	this.start();
@@ -10,7 +7,6 @@ function MapMenu(isActive) {
 	
 }
 
-//configura a função inicial da cena vinculada
 MapMenu.prototype.start = function(){
 	
 	this.scene.setFunctionStart(function () {
@@ -22,14 +18,12 @@ MapMenu.prototype.start = function(){
   
 }
 
-//todo: colocar conexão com bd
 levelIsOpen = function(level, world){
 	
 	return log.getStatusLevel(level);
 	
 }
 
-//todo: colocar conexão com bd
 levelStar = function(level){
 	
 	arr = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3];
@@ -83,9 +77,7 @@ createGUILevels = function(world){
 		
 		//if this level is open
 		b = new Button( null , 200 + l * 200, 200+ 170*j , clickb, 60, 60);
-	
-		
-		//ANIMACÕES
+
 		b_anim1 = new Animation(null, 10);
 		b_anim1.insertRepeatAnimation( namespriteanimation, 10  );
 		b_anim1.insertAnimation( "up", b, 10 );
@@ -119,22 +111,17 @@ createGUILevels = function(world){
 }
 
 createGUIMenuMap = function(){
-	
-	
 		new Sprite("gui_bg_menu", 0,0,canvas.width,canvas.height);
 
 		new Sprite("gui_block5", 250, 210);
 
 		new Sprite("gui_floor", 170,400);
 
-		
-
 		new Sprite("gui_block4a", 10, 0);
 		new Sprite("gui_block4b",canvas.width-500, 0);
 
 		new Sprite("gui_block3a", 0,100);
 		new Sprite("gui_block3b", canvas.width-300, 100);
-
 
 		fnBlock = function(orientation, side, _this){
 			
@@ -160,7 +147,6 @@ createGUIMenuMap = function(){
 			}
 			
 			if( _this.getAlpha() > 0){
-				
 				_this.setAlpha( _this.getAlpha() - 0.1);
 			}
 			
@@ -169,9 +155,7 @@ createGUIMenuMap = function(){
 		s = new Sprite("bg_universe", 0,0, canvas.width,canvas.height);
 		s.setAlpha(0);
 		s.setUpdateFunction(  function(){
-			
 			this.alpha += 0.1;
-			
 		});
 
 		s = new Sprite("gui_block2b", 480, -70);
@@ -184,15 +168,12 @@ createGUIMenuMap = function(){
 		s.setUpdateFunction(  fnBlock.bind(null, "vertical", "right", s) );
 
 		new Sprite("gui_block1", 0,0, canvas.width,canvas.height);
-
 		
 		new Sprite("gui_block1", 0,0, canvas.width,canvas.height);
-			
 
 		//buttons  
 		s = new Sprite("gui_panel_menu", canvas.width - 350, canvas.height - 310, 280,250);
 		s.setUpdateFunction(  fnBlock.bind(null, "vertical", "left", s) );
-
 
 		new Rect(0,0, 40, canvas.width, "#0d0e17");
 		new Rect(0, canvas.height-40, 40, canvas.width, "#0d0e17");

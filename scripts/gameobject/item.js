@@ -19,7 +19,6 @@ function Item(sprite, x, y, classename, z, refx, refy,  level) {
    
 }
 
-//fazendo herança
 Item.prototype = Object.create(GameObject.prototype);
 
 
@@ -37,9 +36,7 @@ Item.prototype.show = function() {
 	this.active = true;
 }
 
-
 Item.prototype.update = function () {
-			
 			if(this.up){
 				this.y-=0.5;
 				

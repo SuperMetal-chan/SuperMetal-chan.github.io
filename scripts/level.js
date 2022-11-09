@@ -1,761 +1,686 @@
 function Level({
-  namelevel,
-  map,
-  item,
-  commands,
-  codebox,
-  codeboy,
-  codebo_posx,
-  codebo_posy,
-  codebo_dir,
-  map_margintop,
-  map_marginleft,
-  limitcommands,
-  limitblock,
-  posxend,
-  posyend,
-  flag_posx,
-  flag_posy,
-  item_posx,
-  item_posy,
-  itemx,
-  itemy,
-  commandsneedly,
-  tutorial,
-  istutorial,
-  isActive,
-  actions_count,
-  actions_id
-} = {}) {
-	
-	
-  this.xmlfile = map;
-  this.scene = new Scene(undefined, isActive);
-  this.itemname = item;
-  this.scene.setFunctionStart(this.start.bind(this));
+                   namelevel,
+                   map,
+                   item,
+                   commands,
+                   codebox,
+                   codeboy,
+                   codebo_posx,
+                   codebo_posy,
+                   codebo_dir,
+                   map_margintop,
+                   map_marginleft,
+                   limitcommands,
+                   limitblock,
+                   posxend,
+                   posyend,
+                   flag_posx,
+                   flag_posy,
+                   item_posx,
+                   item_posy,
+                   itemx,
+                   itemy,
+                   commandsneedly,
+                   tutorial,
+                   istutorial,
+                   isActive,
+                   actions_count,
+                   actions_id
+               } = {}) {
 
-  this.commands = commands;
 
-  this.codebox = codebox;
-  this.codeboy = codeboy;
+    this.xmlfile = map;
+    this.scene = new Scene(undefined, isActive);
+    this.itemname = item;
+    this.scene.setFunctionStart(this.start.bind(this));
 
-  this.codebo_posx = codebo_posx;
-  this.codebo_posy = codebo_posy;
+    this.commands = commands;
 
-  this.codebo_dir = codebo_dir ? codebo_dir : 0;
+    this.codebox = codebox;
+    this.codeboy = codeboy;
 
-  this.map_margintop = map_margintop;
-  this.map_marginleft = map_marginleft;
+    this.codebo_posx = codebo_posx;
+    this.codebo_posy = codebo_posy;
 
-  this.limitcommands = limitcommands;
+    this.codebo_dir = codebo_dir ? codebo_dir : 0;
 
-  this.codebo = null;
-  this.map;
+    this.map_margintop = map_margintop;
+    this.map_marginleft = map_marginleft;
 
-  //sprite of item in container;
-  this.sp_item;
+    this.limitcommands = limitcommands;
 
-  //controling blocks' limit
-  this.limitblock = limitblock;
-  this.initial_limitblock = limitblock;
+    this.codebo = null;
+    this.map;
 
-  this.blockused = 0;
+    //sprite of item in container;
+    this.sp_item;
 
-  this.posxend = posxend;
-  this.posyend = posyend;
+    //controlling blocks' limit
+    this.limitblock = limitblock;
+    this.initial_limitblock = limitblock;
 
-  this.flag_posy = flag_posy;
-  this.flag_posx = flag_posx;
+    this.blockused = 0;
 
-  this.item_posy = item_posy;
-  this.item_posx = item_posx;
+    this.posxend = posxend;
+    this.posyend = posyend;
 
-  this.itemy = itemy;
-  this.itemx = itemx;
+    this.flag_posy = flag_posy;
+    this.flag_posx = flag_posx;
 
-  //count ncommands needly to finish level
-  this.commandsneedly = commandsneedly;
-  this.namelevel = namelevel;
-  this.end = false;
+    this.item_posy = item_posy;
+    this.item_posx = item_posx;
 
-  this.scene.tutorial = tutorial;
-  this.scene.istutorial = istutorial;
+    this.itemy = itemy;
+    this.itemx = itemx;
+
+    this.commandsneedly = commandsneedly;
+    this.namelevel = namelevel;
+    this.end = false;
+
+    this.scene.tutorial = tutorial;
+    this.scene.istutorial = istutorial;
 }
 
 Level.prototype.setTutorial = function (tutorial) {
-  this.scene.tutorial = tutorial;
+    this.scene.tutorial = tutorial;
 };
 
 Level.prototype.reset = function (full) {
 
- 
-  if (full) {
-    this.blockused = 0;
-    this.limitblock = this.initial_limitblock;
-  }
-  this.hideItem();
-  this.end = false;
+
+    if (full) {
+        this.blockused = 0;
+        this.limitblock = this.initial_limitblock;
+    }
+    this.hideItem();
+    this.end = false;
 };
 
 Level.prototype.showItem = function (item) {
-  if (this.sp_item != undefined) this.sp_item.setAlpha(1);
-  //mudar animação
+    if (this.sp_item != undefined) this.sp_item.setAlpha(1);
 };
 
 Level.prototype.hideItem = function () {
-  if (this.sp_item != undefined) this.sp_item.setAlpha(0);
+    if (this.sp_item != undefined) this.sp_item.setAlpha(0);
 };
 
 Level.prototype.updateLevel = function (limitcommands) {
-  //printCommands(limitcommands);
 };
 
 Level.prototype.start = function () {
-	
-  actions = [];
-  actions_count = 0;
-  actions_id = [];
-  
-  xmlmap = new ReaderXMLFile(this.xmlfile);
-  this.arrmap = this.createArrayMap(xmlmap);
 
-  this.setLevel(this.arrmap, this);
+    actions = [];
+    actions_count = 0;
+    actions_id = [];
 
-  _this = this;
-  function teste(_this) {
-    _this.updateLevel(_this.limitcommands);
-  }
+    xmlmap = new ReaderXMLFile(this.xmlfile);
+    this.arrmap = this.createArrayMap(xmlmap);
 
-  this.scene.setFunctionUpdate(teste.bind(null, this));
-  
-  this.printCommands();
+    this.setLevel(this.arrmap, this);
 
-	
-	
+    _this = this;
+
+    function teste(_this) {
+        _this.updateLevel(_this.limitcommands);
+    }
+
+    this.scene.setFunctionUpdate(teste.bind(null, this));
+
+    this.printCommands();
+
+
 };
 
- /*Exibe os comandos abaixo do play*/
 Level.prototype.printCommands = function () {
-	
-	_this2 = this;
+    _this2 = this;
 
-	
-	console.log("print");
-	
-	
-	//if(levels[currentLevel].getEnd())
-	//	return;
+    console.log("print");
 
-	qtd_block = 0; 
-		
-	// removendo todos os comandos
-	var objectstag = se.mlevel.getCurrentScene().getObjectsByTag('btcommands');
-	for (var i = 0; i < objectstag.length; i++) {
-	se.mlevel.removeObject(objectstag[i]);
-	}
-	  
-	var objectstag = se.mlevel.getCurrentScene().getObjectsByTag('guicommands');
-	for (var i = 0; i < objectstag.length; i++) {
-	se.mlevel.removeObject(objectstag[i]);
-	}
+    qtd_block = 0;
 
-	var posx = 0;
-	var posy = 0;
-	var marginx = canvas.width - 280;
-	var marginy = 180;
-	var j = 0;
-	var size = 40;
+    var objectstag = se.mlevel.getCurrentScene().getObjectsByTag('btcommands');
+    for (var i = 0; i < objectstag.length; i++) {
+        se.mlevel.removeObject(objectstag[i]);
+    }
 
-	actualaction = 0;
+    var objectstag = se.mlevel.getCurrentScene().getObjectsByTag('guicommands');
+    for (var i = 0; i < objectstag.length; i++) {
+        se.mlevel.removeObject(objectstag[i]);
+    }
 
-	//percorrendo os comandos
-	for (var i = 0; i < actions.length; i++) {
+    var posx = 0;
+    var posy = 0;
+    var marginx = canvas.width - 280;
+    var marginy = 180;
+    var j = 0;
+    var size = 40;
 
-		j++;
+    actualaction = 0;
 
-		//grade de 6 comandos
-		if (i % 6 == 0) j = 0;
-		posy = parseInt(i / 6) * (size + 5);
-		posx = j * (size + 5);
+    for (var i = 0; i < actions.length; i++) {
 
-		bt = new MiniButton(
-		  null,
-		  marginx + posx,
-		  marginy + posy,
-		  function () {
-			  
-			  log.addAction("remove > "+actions[this.getId()] + "(" + actions_id[this.getId()]  +")");
-			  
-			  //removendo as modificações do blockused
-			if( actions[this.getId()] == "stack_block_push"){
-				levels[currentLevel].blockused--;
-				actions.splice(this.getId(), 1);
-				actions_id.splice(this.getId(), 1);
-			}else if( actions[this.getId()] == "stack_pop"){
-				//verifica se o pop remove um codebo ou um bloco
-				var pop = 0;
-				for(var j = actions.length-1; j >= 0; j--){
-					
-					if(actions[j] == "stack_pop")
-						pop++;
-					
-					if((actions[j] == "stack_character_push") && (pop == 1))
-						break;
-					
-					else if( (actions[j] == "stack_block_push") && (levels[currentLevel].blockused< levels[currentLevel].limitblock) ){
-						
-						levels[currentLevel].blockused++;	
-						break;
-					}
+        j++;
 
-					//fim do loop (exeções do uso do pop no level 5 e 7
-					if( (j == 0)  && (pop == 1) && ((currentLevel == 5) || (currentLevel == 7))){
-						
-						levels[currentLevel].limitblock--;
-						
-					}	
-				}
-				
-				var blockusedtotal = 0;
-				
-				for(var j = actions.length-1; j >= 0; j--){
-					if(actions[j] == "stack_block_push")
-						blockusedtotal++;
-				}
-				
-				if(blockusedtotal <= levels[currentLevel].limitblock){
-					actions.splice(this.getId(), 1);
-					actions_id.splice(this.getId(), 1);
-				}else{
-					 msgconsole = "Não é possivel remover esse bloco"
-				}
-				
-				//levels[currentLevel].blockused++;
-			}else{
-				actions.splice(this.getId(), 1);
-				actions_id.splice(this.getId(), 1);
-			}
-		  
-			
-			_this2.printCommands();
-			
-		  },
-		  size,
-		  size,
-		  0,
-		  100
-		);
+        if (i % 6 == 0) j = 0;
+        posy = parseInt(i / 6) * (size + 5);
+        posx = j * (size + 5);
 
-		namesp = 'mini_' + actions[i];
-		curposx = marginx + posx;
-		curposy = marginy + posy;
+        bt = new MiniButton(
+            null,
+            marginx + posx,
+            marginy + posy,
+            function () {
 
-		if( i == actions.length-1){
-			bt.setAnimation(
-				[ new Animation([namesp,namesp,namesp,namesp], 2, [{h:size-6, w:size+6, x:curposx-3, y:curposy+3},{h:size-4, w:size+4, x:curposx-2,y:curposy+2},{h:size-2, w:size+2,y:curposx-1,y:curposy+1},{h:size, w:size, x:curposx, y:curposy}], false) ]
-			);
-		}else{
-			bt.setAnimation(namesp);
-		}
+                log.addAction("remove > " + actions[this.getId()] + "(" + actions_id[this.getId()] + ")");
 
-		bt.setId(i);
-		bt.setTag('btcommands');
-	 
-	}
+                if (actions[this.getId()] == "stack_block_push") {
+                    levels[currentLevel].blockused--;
+                    actions.splice(this.getId(), 1);
+                    actions_id.splice(this.getId(), 1);
+                } else if (actions[this.getId()] == "stack_pop") {
+                    var pop = 0;
+                    for (var j = actions.length - 1; j >= 0; j--) {
 
-	
-	for (var i = actions.length; i < this.limitcommands; i++) {
-		j++;
-  
-		
-		
-		//grade de 4 comandos
-		if (i % 6 == 0) j = 0;
-		posy = parseInt(i / 6) * (size + 5);
-		posx = j * (size + 5);
+                        if (actions[j] == "stack_pop")
+                            pop++;
 
-		bt = new MiniButton(
-		  'mini_blank',
-		  marginx + posx,
-		  marginy + posy,
-		  function () {
-			
-			actions.splice(this.getId(), 1);
+                        if ((actions[j] == "stack_character_push") && (pop == 1))
+                            break;
 
-		  },
-		  size,
-		  size
-		);
-		bt.setId(i);
-		bt.setTag('btcommands');
-	}
+                        else if ((actions[j] == "stack_block_push") && (levels[currentLevel].blockused < levels[currentLevel].limitblock)) {
+
+                            levels[currentLevel].blockused++;
+                            break;
+                        }
+
+                        if ((j == 0) && (pop == 1) && ((currentLevel == 5) || (currentLevel == 7))) {
+                            levels[currentLevel].limitblock--;
+                        }
+                    }
+
+                    var blockusedtotal = 0;
+
+                    for (var j = actions.length - 1; j >= 0; j--) {
+                        if (actions[j] == "stack_block_push")
+                            blockusedtotal++;
+                    }
+
+                    if (blockusedtotal <= levels[currentLevel].limitblock) {
+                        actions.splice(this.getId(), 1);
+                        actions_id.splice(this.getId(), 1);
+                    } else {
+                        msgconsole = "Неможливо видалити цей блок"
+                    }
+                } else {
+                    actions.splice(this.getId(), 1);
+                    actions_id.splice(this.getId(), 1);
+                }
+                _this2.printCommands();
+            },
+            size,
+            size,
+            0,
+            100
+        );
+
+        namesp = 'mini_' + actions[i];
+        curposx = marginx + posx;
+        curposy = marginy + posy;
+
+        if (i == actions.length - 1) {
+            bt.setAnimation(
+                [new Animation([namesp, namesp, namesp, namesp], 2, [{
+                    h: size - 6,
+                    w: size + 6,
+                    x: curposx - 3,
+                    y: curposy + 3
+                }, {h: size - 4, w: size + 4, x: curposx - 2, y: curposy + 2}, {
+                    h: size - 2,
+                    w: size + 2,
+                    y: curposx - 1,
+                    y: curposy + 1
+                }, {h: size, w: size, x: curposx, y: curposy}], false)]
+            );
+        } else {
+            bt.setAnimation(namesp);
+        }
+
+        bt.setId(i);
+        bt.setTag('btcommands');
+
+    }
 
 
-	gui_block = new Sprite("gui_block", canvas.width - 130, 125, 25,25);
-	gui_block.setTag("guicommands");
-	txt_qtd_block = new Text("", canvas.width - 100, 147, "white", 25);
-	txt_qtd_block.setTag("guicommands");
+    for (var i = actions.length; i < this.limitcommands; i++) {
+        j++;
 
-	txt_qtd_block.update = function(){
+        if (i % 6 == 0) j = 0;
+        posy = parseInt(i / 6) * (size + 5);
+        posx = j * (size + 5);
 
-		//this.setText("x" + ( levels[currentLevel].getLimitBlock() - qtd_block) );
-		this.setText("x" + ( levels[currentLevel].getLimitBlock() - levels[currentLevel].blockused) );
-	}
-		
-			
-}
+        bt = new MiniButton(
+            'mini_blank',
+            marginx + posx,
+            marginy + posy,
+            function () {
 
+                actions.splice(this.getId(), 1);
 
-Level.prototype.printHightlight = function(){
-	
-	if( levels[currentLevel].codebo.getCurrentAction() > actions.length-1)
-		return;
-	
-	var posx = 0;
-	var posy = 0;
-	var marginx = canvas.width - 280;
-	var marginy = 180;
-	var size = 40;
-	var j = 0;
-  
-  
-	// removendo todos os comandos
-	levels[currentLevel].clearHightlight();
-	
-	var index = levels[currentLevel].codebo.getCurrentAction();
-	j = index;
-
-	//grade de 4 comandos
-	if (index % 6 == 0) 
-		j = 0;//parseInt(index/6);
-	else
-		j = index % 6;
-	
-	posy = parseInt(index / 6) * (size + 5);
-	posx = j * (size + 5);	
-	var sp = new Sprite("mini_hightlight", marginx + posx, marginy + posy, size, size, 100);  
-	sp.setTag('hightbt');		
-	
-	 
-}
+            },
+            size,
+            size
+        );
+        bt.setId(i);
+        bt.setTag('btcommands');
+    }
 
 
-Level.prototype.clearHightlight = function(){
-	
-	var objectstag = se.mlevel.getCurrentScene().getObjectsByTag('hightbt');
-	for (var i = 0; i < objectstag.length; i++) {
-		se.mlevel.removeObject(objectstag[i]);
-	}
+    gui_block = new Sprite("gui_block", canvas.width - 130, 125, 25, 25);
+    gui_block.setTag("guicommands");
+    txt_qtd_block = new Text("", canvas.width - 100, 147, "white", 25);
+    txt_qtd_block.setTag("guicommands");
+
+    txt_qtd_block.update = function () {
+        this.setText("x" + (levels[currentLevel].getLimitBlock() - levels[currentLevel].blockused));
+    }
+
 
 }
 
 
-Level.prototype.createGUIButton = function() {
-	
-  //barra comandos inferior
-  new Rect(0, canvas.height - 100, 100, 660, 'rgba(255, 255, 255, 0.5)');
+Level.prototype.printHightlight = function () {
 
-  //barra menu superior
-  new Rect(0, 0, 110, canvas.width, '#30415d');
-  
+    if (levels[currentLevel].codebo.getCurrentAction() > actions.length - 1)
+        return;
 
-//bara azul comandos
-  new Rect(0, canvas.height - 100  - 30, 40, 200, '#30415d');
-  new Text('Команди', 20, canvas.height - 105  , '#fff');
+    var posx = 0;
+    var posy = 0;
+    var marginx = canvas.width - 280;
+    var marginy = 180;
+    var size = 40;
+    var j = 0;
 
-	//paine comandos
-new Rect(canvas.width - 300, 150, 580, 1180, 'rgba(255, 255, 255, 0.5)');
+    levels[currentLevel].clearHightlight();
 
-//barra azul principal
-  new Rect(canvas.width - 260, 120, 40, 200, '#30415d');
-  new Text('Блоки', canvas.width - 240, 145, '#fff');
-  
-  
+    var index = levels[currentLevel].codebo.getCurrentAction();
+    j = index;
 
-  new Button(
-    'button_play',
-    canvas.width - 300,
-    20,
-    function () {
-	  msgconsole = "";
-	  txt_console.color = "#fff";
-	  levels[currentLevel].reset();
-	  levels[currentLevel].getCodebo().reset();
-	  levels[currentLevel].getMap().reset(levels[currentLevel].getCodebo());
-      levels[currentLevel].getCodebo().setCommands(window.actions, levels[currentLevel].getMap().getMap() );
-      levels[currentLevel].getCodebo().start();
-	  log.addAction("play");
-    },
-    70,
-    70
-  );
+    if (index % 6 == 0)
+        j = 0;
+    else
+        j = index % 6;
 
-  //FIXOS DE TODOS OS LEVEL
-  new Button(
-    'button_stop',
-     canvas.width - 220,
-    20,
-    function () {
-      levels[currentLevel].getCodebo().pause();
-	  log.addAction("stop");
-	  levels[currentLevel].printCommands();
-	  celarHightlight();
-    },
-    60,
-    60
-  );
+    posy = parseInt(index / 6) * (size + 5);
+    posx = j * (size + 5);
+    var sp = new Sprite("mini_hightlight", marginx + posx, marginy + posy, size, size, 100);
+    sp.setTag('hightbt');
 
-  new Button(
-    'button_reload',
-    canvas.width - 150,
-    20,
-    function () {
-	  msgconsole = "";
-	  levels[currentLevel].reset(true);
-      levels[currentLevel].getCodebo().reset();
-      levels[currentLevel].getMap().reset(levels[currentLevel].getCodebo());
-	  levels[currentLevel].blockused = 0;
-      actions = [];
-	  levels[currentLevel].printCommands();
-	  clearHightlight();
-	  log.reloadLevel();
-	  //log.addAction("reload");
-	  
-	  
-    },
-    60,
-    60
-  );
 
-  new Button('button_help', 20, 20, function () {
-	  
-	   se.mlevel.getCurrentScene().resetCurrentTutorial();	
-	   se.mlevel.getCurrentScene().istutorial = true;
-	   log.addAction("help");
-  
-  }, 70, 70);
-  
-  
-  new Button(
-    'button_menu',
-    110,
-    20,
-    function () {
-      //menu
-      se.mlevel.loadScene(2);
-	  log.addAction("menu");
-    },
-    70,
-    70
-  );
+}
+
+
+Level.prototype.clearHightlight = function () {
+
+    var objectstag = se.mlevel.getCurrentScene().getObjectsByTag('hightbt');
+    for (var i = 0; i < objectstag.length; i++) {
+        se.mlevel.removeObject(objectstag[i]);
+    }
+
+}
+
+
+Level.prototype.createGUIButton = function () {
+    new Rect(0, canvas.height - 100, 100, 660, 'rgba(255, 255, 255, 0.5)');
+    new Rect(0, 0, 110, canvas.width, '#30415d');
+    new Rect(0, canvas.height - 100 - 30, 40, 200, '#30415d');
+    new Text('Команди', 20, canvas.height - 105, '#fff');
+    new Rect(canvas.width - 300, 150, 580, 1180, 'rgba(255, 255, 255, 0.5)');
+    new Rect(canvas.width - 260, 120, 40, 200, '#30415d');
+    new Text('Блоки', canvas.width - 240, 145, '#fff');
+
+
+    new Button(
+        'button_play',
+        canvas.width - 300,
+        20,
+        function () {
+            msgconsole = "";
+            txt_console.color = "#fff";
+            levels[currentLevel].reset();
+            levels[currentLevel].getCodebo().reset();
+            levels[currentLevel].getMap().reset(levels[currentLevel].getCodebo());
+            levels[currentLevel].getCodebo().setCommands(window.actions, levels[currentLevel].getMap().getMap());
+            levels[currentLevel].getCodebo().start();
+            log.addAction("play");
+        },
+        70,
+        70
+    );
+
+    new Button(
+        'button_stop',
+        canvas.width - 220,
+        20,
+        function () {
+            levels[currentLevel].getCodebo().pause();
+            log.addAction("stop");
+            levels[currentLevel].printCommands();
+            celarHightlight();
+        },
+        60,
+        60
+    );
+
+    new Button(
+        'button_reload',
+        canvas.width - 150,
+        20,
+        function () {
+            msgconsole = "";
+            levels[currentLevel].reset(true);
+            levels[currentLevel].getCodebo().reset();
+            levels[currentLevel].getMap().reset(levels[currentLevel].getCodebo());
+            levels[currentLevel].blockused = 0;
+            actions = [];
+            levels[currentLevel].printCommands();
+            clearHightlight();
+            log.reloadLevel();
+        },
+        60,
+        60
+    );
+
+    new Button('button_help', 20, 20, function () {
+        se.mlevel.getCurrentScene().resetCurrentTutorial();
+        se.mlevel.getCurrentScene().istutorial = true;
+        log.addAction("help");
+    }, 70, 70);
+
+
+    new Button(
+        'button_menu',
+        110,
+        20,
+        function () {
+            //menu
+            se.mlevel.loadScene(2);
+            log.addAction("menu");
+        },
+        70,
+        70
+    );
 }
 
 
 Level.prototype.setLevel = function (arrmap, _this) {
-  msgconsole = '';
+    msgconsole = '';
+    new Text(this.namelevel, 200, 80);
+    this.createGUIButton();
+    this.createConsole();
+    var commands = _this.commands;
 
-  new Text(this.namelevel, 200, 80);
+    //map
+    _this.map = new Map(arrmap, _this.map_margintop, this.map_marginleft);
 
-  this.createGUIButton();
-  this.createConsole();
+    if (_this.itemname != undefined) {
+        _this.map.setItem(
+            new Item(
+                _this.itemname,
+                _this.item_posx,
+                _this.item_posy,
+                'imagem',
+                100,
+                _this.itemx,
+                _this.itemy
+            )
+        );
+    }
 
-  var commands = _this.commands;
-
-  //map
-  _this.map = new Map(arrmap, _this.map_margintop, this.map_marginleft);
-
-  if (_this.itemname != undefined) {
-    _this.map.setItem(
-      new Item(
-        _this.itemname,
-        _this.item_posx,
-        _this.item_posy,
-        'imagem',
-        100,
-        _this.itemx,
-        _this.itemy
-      )
+    //CodeBo
+    _this.codebo = new Codebo(
+        _this.codebo_posx,
+        _this.codebo_posy,
+        _this.codebox,
+        _this.codeboy,
+        'play',
+        99,
+        this.codebo_dir
     );
-  }
 
-  //CodeBo
-  _this.codebo = new Codebo(
-    _this.codebo_posx,
-    _this.codebo_posy,
-    _this.codebox,
-    _this.codeboy,
-    'play',
-    99,
-    this.codebo_dir
-  );
+    _this.codebo.reset();
 
-  _this.codebo.reset();
+    _this.map.adjustmentLevels(
+        _this.codebo.getLevel(),
+        _this.codebo.actualx,
+        _this.codebo.actualy,
+        _this.map
+    );
 
-  //_this.codebo.map = arrmap;
+    size = 60;
+    marginx = 0;
+    posx = 20;
+    marginbt = 10;
 
-  _this.map.adjustmentLevels(
-    _this.codebo.getLevel(),
-    _this.codebo.actualx,
-    _this.codebo.actualy,
-    _this.map
-  );
+    ['forward', 'left', 'right'].forEach(function (item) {
+        _this.createCommandsButton(item, _this.limitcommands);
+    });
 
-  size = 60;
-  marginx = 0;
-  posx = 20;
-  marginbt = 10;
+    commands.forEach(function (item) {
+        _this.createCommandsButton(item, _this.limitcommands);
+    });
 
-  //FIXO DE TODOS OS LEVELS
-  ['forward', 'left', 'right'].forEach(function (item) {
-    _this.createCommandsButton(item, _this.limitcommands);
-  });
+    this.sp_item = new Sprite(this.itemname, canvas.width / 2 - 15, 40, 30, 30);
+    this.sp_item.setAlpha(0);
+    this.createContainerItem(_this.item);
 
-  commands.forEach(function (item) {
-    _this.createCommandsButton(item, _this.limitcommands);
-  });
+    anim = new Animation([
+        'red_flag', 'red_flag2', 'red_flag3', 'red_flag2'], 10);
 
-  this.sp_item = new Sprite(this.itemname, canvas.width / 2 - 15, 40, 30, 30);
-  this.sp_item.setAlpha(0);
-  this.createContainerItem(_this.item);
-
-  //verificar modo de automatizar isso e o item
-  anim = new Animation([
-    'red_flag', 'red_flag2', 'red_flag3', 'red_flag2'], 10);
-	
-  this.flag = new Sprite([anim],
-    this.flag_posx,
-    this.flag_posy,
-    30,
-    60,
-    101
-  );
+    this.flag = new Sprite([anim],
+        this.flag_posx,
+        this.flag_posy,
+        30,
+        60,
+        101
+    );
 };
 
 Level.prototype.getScene = function () {
-  return this.scene;
+    return this.scene;
 };
 
 Level.prototype.getCodebo = function () {
-  return this.codebo;
+    return this.codebo;
 };
 
 Level.prototype.getMap = function () {
-  return this.map;
+    return this.map;
 };
 
 Level.prototype.getLimitBlock = function () {
-  return this.limitblock;
+    return this.limitblock;
 };
 
 Level.prototype.getEnd = function () {
-  return this.end;
+    return this.end;
 };
 
 Level.prototype.setEnd = function () {
-  if (this.end) return;
+    if (this.end) return;
 
-  var _this = this;
-  
-  this.end = true;
+    var _this = this;
 
-  var sp_bg = new Sprite('bg_modal_finish', 200, 100, 800, 400, 'imagem', 200);
+    this.end = true;
 
-  var bt_menu = new Button(
-    'bt_menu_level',
-    450,
-    400,
-    function () {
-      //ver o indice menu
-      se.mlevel.loadScene(2);
-    },
-    50,
-    58
-  );
+    var sp_bg = new Sprite('bg_modal_finish', 200, 100, 800, 400, 'imagem', 200);
 
-  bt_menu.setZ(201);
+    var bt_menu = new Button(
+        'bt_menu_level',
+        450,
+        400,
+        function () {
+            se.mlevel.loadScene(2);
+        },
+        50,
+        58
+    );
 
-  var bt_next = new Button(
-    'bt_next_level',
-    700,
-    400,
-    function () {
-      //ver o indice  px level
-      this.hide();
-      //se.mlevel.loadScene(0);
+    bt_menu.setZ(201);
 
-      _this.nextLevel();
-      se.mlevel.loadScene(currentLevel + 3);
-	  
-    },
-    50,
-    58
-  );
+    var bt_next = new Button(
+        'bt_next_level',
+        700,
+        400,
+        function () {
+            this.hide();
 
-  bt_next.setZ(201);
+            _this.nextLevel();
+            se.mlevel.loadScene(currentLevel + 3);
+        },
+        50,
+        58
+    );
 
-  var sp_txt = new Sprite('gui_congrats', 500, 160);
-  sp_txt.setZ(201);
+    bt_next.setZ(201);
 
-  //colocar pontos no bd
-  if (this.commands.length <= this.commandsneedly) {
-    var sp_star = new Sprite('gui_star_3', 500, 250);
-    star = 3;
-    sp_star.setZ(201);
-  } else if (this.commands.length <= this.commandsneedly + 3) {
-    var sp_star = new Sprite('gui_star_2', 530, 250);
-    star = 2;
-    sp_star.setZ(201);
-  } else {
-    var sp_star = new Sprite('gui_star_1', 550, 250);
-    star = 1;
-    sp_star.setZ(201);
-  }
+    var sp_txt = new Sprite('gui_congrats', 500, 160);
+    sp_txt.setZ(201);
 
-  new Modal([sp_bg, bt_next, bt_menu, sp_txt, sp_star]);
-  
-  log.finishLevel(currentLevel + 1);
+    //colocar pontos no bd
+    if (this.commands.length <= this.commandsneedly) {
+        var sp_star = new Sprite('gui_star_3', 500, 250);
+        star = 3;
+        sp_star.setZ(201);
+    } else if (this.commands.length <= this.commandsneedly + 3) {
+        var sp_star = new Sprite('gui_star_2', 530, 250);
+        star = 2;
+        sp_star.setZ(201);
+    } else {
+        var sp_star = new Sprite('gui_star_1', 550, 250);
+        star = 1;
+        sp_star.setZ(201);
+    }
+
+    new Modal([sp_bg, bt_next, bt_menu, sp_txt, sp_star]);
+
+    log.finishLevel(currentLevel + 1);
 };
 
 
 Level.prototype.consoleError = function (msg, line) {
-	
-	msgconsole = msg + " c:"+(line+1);
-	txt_console.color = "#f33";
-	
-	log.addAction("error>"+msgconsole);
-	
+    msgconsole = msg + " c:" + (line + 1);
+    txt_console.color = "#f33";
+
+    log.addAction("error>" + msgconsole);
+
 }
 Level.prototype.consoleWarning = function (msg, line) {
-	
-	msgconsole = msg + " c:"+(line+1);
-	txt_console.color = "#fc0";
-	
-	log.addAction("warning>"+msgconsole);
-	
+    msgconsole = msg + " c:" + (line + 1);
+    txt_console.color = "#fc0";
+    log.addAction("warning>" + msgconsole);
 }
 
 
-
-Level.prototype.createArrayMap = function(map) {
-  arrayMap = [];
-
-  for (var i = 0; i < map.getSize('map'); i++) {
-    sizeline = map.getSize('line' + (i + 1));
-    arrayMap[i] = [];
-
-    for (var j = 0; j < sizeline; j++) {
-      var a = map.getNode('column' + (j + 1), i);
-      var b = map.getValue(a);
-      arrayMap[i].push(b);
+Level.prototype.createArrayMap = function (map) {
+    arrayMap = [];
+    for (var i = 0; i < map.getSize('map'); i++) {
+        sizeline = map.getSize('line' + (i + 1));
+        arrayMap[i] = [];
+        for (var j = 0; j < sizeline; j++) {
+            var a = map.getNode('column' + (j + 1), i);
+            var b = map.getValue(a);
+            arrayMap[i].push(b);
+        }
     }
-  }
-
-  return arrayMap;
+    return arrayMap;
 }
 
 
-
-Level.prototype.createConsole= function (){
-	
-	/*CONSOLE*/
-	
-	new Rect(canvas.width - 290, canvas.height - 90, 80, 280, 'rgba(20,20,20,1)');	
-	new Text('>>', canvas.width - 280, canvas.height - 60, '#fff');
-	txt_console = new Text("- ", canvas.width - 280, canvas.height - 40, '#fff', 15, "poxel");
-	
-	txt_console.update = function(){
-
-		//this.setText("x" + ( levels[currentLevel].getLimitBlock() - qtd_block) );
-		this.setText(msgconsole);
-	}
+Level.prototype.createConsole = function () {
+    /*CONSOLE*/
+    new Rect(canvas.width - 290, canvas.height - 90, 80, 280, 'rgba(20,20,20,1)');
+    new Text('>>', canvas.width - 280, canvas.height - 60, '#fff');
+    txt_console = new Text("- ", canvas.width - 280, canvas.height - 40, '#fff', 15, "poxel");
+    txt_console.update = function () {
+        this.setText(msgconsole);
+    }
 
 }
 
 
-Level.prototype.createContainerItem = function(item) {
-	new Text("Предмет", canvas.width/2 - 33, 23, "white", 17);
-	new Sprite("container_item", canvas.width/2 - 25, 30, 50, 50 );
+Level.prototype.createContainerItem = function (item) {
+    new Text("Предмет", canvas.width / 2 - 33, 23, "white", 17);
+    new Sprite("container_item", canvas.width / 2 - 25, 30, 50, 50);
 }
 
-Level.prototype.nextLevel = function(){
-	console.log(currentLevel, levels.length-1 );
-	if(currentLevel < levels.length-1){
-		currentLevel++;
-		log.startLevel( currentLevel + 1 );
-	}
+Level.prototype.nextLevel = function () {
+    console.log(currentLevel, levels.length - 1);
+    if (currentLevel < levels.length - 1) {
+        currentLevel++;
+        log.startLevel(currentLevel + 1);
+    }
 }
 
 
-Level.prototype.createCommandsButton= function(item, limitcommands) {
- 
- //
- 
- new Button(
-    'button_' + item,
-    window.posx,
-    canvas.height - 70,
-   
-   function () {
-	  
-	  log.addAction(item + "("+actions_count+")");
-	  actions_id.push(actions_count++);
-	  
-      if (actions.length < limitcommands) {
-		 
-		  if(item == "stack_block_push"){
-		    
-			if(levels[currentLevel].limitblock > levels[currentLevel].blockused) {
-				levels[currentLevel].blockused++;	
-				actions.push(item);
-			}
-		  
-		  }else if(item == "stack_pop"){
-			  
-				var pop = 0;
-				var action_valid = false;
+Level.prototype.createCommandsButton = function (item, limitcommands) {
+    new Button(
+        'button_' + item,
+        window.posx,
+        canvas.height - 70,
 
-				for(var j = actions.length-1; j >= 0; j--){
-					
-					if(actions[j] == "stack_pop"){
-						pop++;
-					}
-						
-					if((actions[j] == "stack_character_push") && (pop == 0)){
-						action_valid = true;
-						break;
-					}
-					
-					else if( (actions[j] == "stack_block_push") && (levels[currentLevel].blockused > 0) ){
-						levels[currentLevel].blockused--;	
-						action_valid = true;
-						break;
-					}
+        function () {
+            log.addAction(item + "(" + actions_count + ")");
+            actions_id.push(actions_count++);
 
-					//fim do loop (exeções do uso do pop no level 5 e 7
-					if((j == 0) && (pop==0) && ((currentLevel == 5) || (currentLevel == 7))){
-						
-						levels[currentLevel].limitblock++;	
-						action_valid = true;
-					}		
-				}
-				
-				if((actions.length == 0) && ((currentLevel == 5) || (currentLevel == 7))){
-					levels[currentLevel].limitblock++;	
-					actions.push(item);					
-				}else if(action_valid) 
-					actions.push(item);
-				
-		  }else{
-			   actions.push(item);
-		  }
-		  
-	  }
-	  
-	   levels[currentLevel].printCommands();
-    },
-    window.size,
-    window.size
-  );
+            if (actions.length < limitcommands) {
+                if (item == "stack_block_push") {
+                    if (levels[currentLevel].limitblock > levels[currentLevel].blockused) {
+                        levels[currentLevel].blockused++;
+                        actions.push(item);
+                    }
+                } else if (item == "stack_pop") {
+                    var pop = 0;
+                    var action_valid = false;
 
-  window.posx += window.size + window.marginbt;
+                    for (var j = actions.length - 1; j >= 0; j--) {
+
+                        if (actions[j] == "stack_pop") {
+                            pop++;
+                        }
+
+                        if ((actions[j] == "stack_character_push") && (pop == 0)) {
+                            action_valid = true;
+                            break;
+                        } else if ((actions[j] == "stack_block_push") && (levels[currentLevel].blockused > 0)) {
+                            levels[currentLevel].blockused--;
+                            action_valid = true;
+                            break;
+                        }
+
+                        if ((j == 0) && (pop == 0) && ((currentLevel == 5) || (currentLevel == 7))) {
+
+                            levels[currentLevel].limitblock++;
+                            action_valid = true;
+                        }
+                    }
+
+                    if ((actions.length == 0) && ((currentLevel == 5) || (currentLevel == 7))) {
+                        levels[currentLevel].limitblock++;
+                        actions.push(item);
+                    } else if (action_valid)
+                        actions.push(item);
+
+                } else {
+                    actions.push(item);
+                }
+
+            }
+
+            levels[currentLevel].printCommands();
+        },
+        window.size,
+        window.size
+    );
+
+    window.posx += window.size + window.marginbt;
 }

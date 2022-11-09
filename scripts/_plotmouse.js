@@ -1,17 +1,12 @@
 function PlotMouse() {
-	//this.m = new ManagerMouse();
 	GameObject.call(this, undefined, 0, 0, "", 0,0,0,0);
    
 }
 
-//fazendo herança
 PlotMouse.prototype = Object.create(GameObject.prototype);
 
 
-PlotMouse.prototype.update = function (x, y) {
- 
-  // console.log(x, y)
-};
+PlotMouse.prototype.update = function (x, y) { };
 
 
 PlotMouse.prototype.moveMouse = function (x, y) {
