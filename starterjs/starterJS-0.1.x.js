@@ -2507,7 +2507,6 @@ ManagerLoader.prototype.getAssets = function(name){
 
 
 /**
- * Imprime o carregamento na tela inicial
  * @method
  */
 ManagerLoader.prototype.print = function(porcent){
@@ -2558,9 +2557,6 @@ ManagerLoader.prototype.print = function(porcent){
     ctx.fillStyle="#FFFFFF";
     ctx.fill();
 
-    img = document.getElementById("logohtml");
-    ctx.drawImage(img,canvas.width/2 - 150, canvas.height/2 - 220, 300, 350);
-
     ctx.font="15px Verdana";
     text = parseInt(porcentload*100)+"%";
     ctx.textAlign="center";
@@ -2569,32 +2565,26 @@ ManagerLoader.prototype.print = function(porcent){
 }
 
 /**
- * Essa classe é responsável pela entrada de teclado
  * @class
  */
 function ManagerInputs() {
     /**
-     * Flag da tecla direita
      * @type {boolean}
      */
     this.DIREITA = false;
     /**
-     * Flag da tecla esquerda
      * @type {boolean}
      */
     this.ESQUERDA = false;
     /**
-     * Flag da tecla cima
      * @type {boolean}
      */
     this.CIMA  = false;
     /**
-     * Flag da tecla baixo
      * @type {boolean}
      */
     this.BAIXO = false;
     /**
-     * Flag da tecla espaço
      * @type {boolean}
      */
     this.ESPACO =  false;
@@ -2603,11 +2593,9 @@ function ManagerInputs() {
 }
 
 /**
- * Inicia a captura do teclado
  * @method
  */
 ManagerInputs.prototype.start = function () {
-
     document.addEventListener('keydown', function(evento) {
         if (evento.keyCode == 38) { // Seta para esquerda
             this.CIMA = true;

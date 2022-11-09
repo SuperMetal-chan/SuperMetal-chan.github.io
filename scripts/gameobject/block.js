@@ -21,7 +21,6 @@ Block.prototype = Object.create(GameObject.prototype);
 Block.prototype.print = function() {
 
     if(this.animation != null) {
-		
 		ctx.save();
 		ctx.globalAlpha = this.getAlpha();
         ctx.drawImage(this.animation[this.currentAnimation].getCurrentSprite(), this.x, this.y, this.w, this.h);
