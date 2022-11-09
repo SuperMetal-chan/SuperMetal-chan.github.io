@@ -1,8 +1,8 @@
 /**
-* Representa uma sequência de imagens para animação
+*
 * @param animations
 * @param {array} - array of animations
-* @para {array} - array de propriedades x, y, z e aplha
+* @para {array} - array x, y, z
 * @constructor
 */
 function Animation(sprites, timesprite, properties, loop) {
@@ -27,7 +27,6 @@ function Animation(sprites, timesprite, properties, loop) {
 }
 	
 /**
-* Configura a próxima animaçã. Ao fazer isso, a animação irá executar a próxima, quando finalizar.
 * @method
 */
 Animation.prototype.setNextAnimation = function (animation) {
