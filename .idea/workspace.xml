@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="85007db3-23d8-4840-8ad3-4564200b1a97" name="Default" comment="Multiple fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/gameobject/block.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/gameobject/block.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +116,7 @@
       <workItem from="1667911764796" duration="9613000" />
       <workItem from="1667925538305" duration="7257000" />
       <workItem from="1667991121302" duration="4080000" />
-      <workItem from="1668002047364" duration="6804000" />
+      <workItem from="1668002047364" duration="7564000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1667911804493</created>
@@ -378,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668012366133</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Multiple fixes">
+      <created>1668015138927</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1668015138927</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
