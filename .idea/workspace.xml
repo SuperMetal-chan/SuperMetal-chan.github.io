@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="85007db3-23d8-4840-8ad3-4564200b1a97" name="Default" comment="Fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm-game/scripts/level.js" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm-game/scripts/level.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/level.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/level.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +17,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/algorithm-game" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -116,7 +115,7 @@
       <workItem from="1667898939456" duration="2766000" />
       <workItem from="1667906880141" duration="1873000" />
       <workItem from="1667911764796" duration="9613000" />
-      <workItem from="1667925538305" duration="5609000" />
+      <workItem from="1667925538305" duration="6405000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1667911804493</created>
@@ -300,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667946583203</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Fix">
+      <created>1667947145613</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1667947145613</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
