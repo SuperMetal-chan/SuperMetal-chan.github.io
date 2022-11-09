@@ -1,5 +1,3 @@
-//todo: mudar o nome para level.js
-
 function Level({
   namelevel,
   map,
