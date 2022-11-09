@@ -14,7 +14,7 @@ InitialScreen.prototype.start = function(){
 		// anim.insertAnimation( "fadein", null, 10 );
 		// anim.setLoop(false);
 
-		var sp = new Sprite( [anim] , 380, 300, 150, 30);
+		// var sp = new Sprite( [anim] , 380, 300, 150, 30);
 
 		// var tx2 = new Text("Financiamento", 690, 250)
 
@@ -23,14 +23,14 @@ InitialScreen.prototype.start = function(){
 		// anim.insertAnimation( "fadein", null, 10 );
 		// anim.setLoop(false);
 
-		var sp2 = new Sprite( [anim], 700, 275, 120, 65);
+		// var sp2 = new Sprite( [anim], 700, 275, 120, 65);
 		
 					
 		setTimeout( 
 		function(){  
 
-			sp.hide();
-			sp2.hide();
+			// sp.hide();
+			// sp2.hide();
 
 			anim = new Animation(["logo_anim1", "logo_anim2", "logo_anim3", "logo_anim4", 
 			"logo_anim5", "logo_anim6", "logo_anim7"], 10, false);
