@@ -12,7 +12,8 @@ InitialScreen.prototype.start = function(){
 		//anim.insertRepeatAnimation( "logo_fapesb", 10  );
 		anim.insertAnimation( "fadein", null, 10 );
 		anim.setLoop(false);
-		
+
+		var sp = new Sprite( [anim] , 380, 300, 150, 30);
 		var sp2 = new Sprite( [anim], 700, 275, 120, 65);
 		
 		
@@ -20,10 +21,8 @@ InitialScreen.prototype.start = function(){
 					
 		setTimeout( 
 		function(){  
-		
-			tx.hide(); 
-			tx2.hide(); 
-			sp.hide(); 
+
+			sp.hide();
 			sp2.hide();
 
 			anim = new Animation(["logo_anim1", "logo_anim2", "logo_anim3", "logo_anim4", 
