@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85007db3-23d8-4840-8ad3-4564200b1a97" name="Default" comment="Fixes">
-      <change beforePath="$PROJECT_DIR$/scripts/screens/initialscreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/screens/initialscreen.js" afterDir="false" />
+    <list default="true" id="85007db3-23d8-4840-8ad3-4564200b1a97" name="Default" comment="Small fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,13 +118,6 @@
       <workItem from="1667925538305" duration="7257000" />
       <workItem from="1667991121302" duration="4080000" />
       <workItem from="1668002047364" duration="7564000" />
-    </task>
-    <task id="LOCAL-00001" summary="First commit">
-      <created>1667911804493</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1667911804493</updated>
     </task>
     <task id="LOCAL-00002" summary="First commit">
       <created>1667912254736</created>
@@ -455,7 +448,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668024084173</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Fixes">
+      <created>1668025079086</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1668025079086</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Small fix">
+      <created>1668026218679</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1668026218679</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -507,7 +514,8 @@
     <MESSAGE value="Fix" />
     <MESSAGE value="Multiple fixes" />
     <MESSAGE value="Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes" />
+    <MESSAGE value="Small fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small fix" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/log/log.js">
