@@ -569,7 +569,7 @@ Level.prototype.setEnd = function () {
 
 Level.prototype.consoleError = function (msg, line) {
     msgconsole = msg + " #:" + (line + 1);
-    txt_console.size = 21;
+    txt_console.size = 20;
     txt_console.color = "#f33";
 
     log.addAction("error>" + msgconsole);
@@ -577,7 +577,7 @@ Level.prototype.consoleError = function (msg, line) {
 }
 Level.prototype.consoleWarning = function (msg, line) {
     msgconsole = msg + " #:" + (line + 1);
-    txt_console.size = 21;
+    txt_console.size = 20;
     txt_console.color = "#fc0";
     log.addAction("warning>" + msgconsole);
 }
