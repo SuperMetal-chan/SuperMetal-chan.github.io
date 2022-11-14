@@ -373,7 +373,7 @@ Codebo.prototype.runCommands = function (exec) {
                 (this.map[this.actualy][this.actualx + 1] % 10) * -1
             );
         } else {
-            levels[currentLevel].consoleWarning("стек не створено!", this.actualaction);
+            levels[currentLevel].consoleWarning("Стек не створено!", this.actualaction);
         }
         levels[currentLevel].getMap().create();
         levels[currentLevel].getMap().adjustmentLevels(this.getLevel(), this.actualx, this.actualy);
