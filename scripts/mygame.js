@@ -30,8 +30,6 @@ se.setResources = function () {
 
   
   //CHARACTER
-
-  //CodeBo pra frente
   this.loader.addResource('codebo_sp1', 'codebo/forward/sp1.png', 'image');
   this.loader.addResource('codebo_sp2', 'codebo/forward/sp2.png', 'image');
   this.loader.addResource('codebo_sp3', 'codebo/forward/sp3.png', 'image');
@@ -39,17 +37,14 @@ se.setResources = function () {
   this.loader.addResource('codebo_sp5', 'codebo/forward/sp5.png', 'image');
   this.loader.addResource('codebo_sp6', 'codebo/forward/sp6.png', 'image');
 
-  //CodeBo pra trás
   this.loader.addResource(
     'codebo_back_sp1',
     'codebo/backward/sp1.png',
     'image'
   );
 
-  //CodeBo pra esquerda
   this.loader.addResource('codebo_left_sp1', 'codebo/left/sp1.png', 'image');
 
-  //CodeBo pra direita
   this.loader.addResource('codebo_right_sp1', 'codebo/right/sp1.png', 'image');
   this.loader.addResource('codebo_right_sp2', 'codebo/right/sp2.png', 'image');
   this.loader.addResource('codebo_right_sp3', 'codebo/right/sp3.png', 'image');
@@ -72,8 +67,6 @@ se.setResources = function () {
   
   this.loader.addResource('block_bridge', 'blocks/bridge_0.png', 'image');
   this.loader.addResource('block_bridge_shadow', 'blocks/bridge_shadow.png', 'image');
-  
-  //this.loader.addResource('block_blank2', 'blocks/block_blank2.png', 'image');
 
   //water blocks
   this.loader.addResource('water_0', 'water/water_0.png', 'image');

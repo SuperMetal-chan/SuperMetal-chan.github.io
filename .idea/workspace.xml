@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85007db3-23d8-4840-8ad3-4564200b1a97" name="Default" comment="Small fix">
+      <change afterPath="$PROJECT_DIR$/test/Test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/mygame.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/mygame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starterjs/starterJS-0.1.x.js" beforeDir="false" afterPath="$PROJECT_DIR$/starterjs/starterJS-0.1.x.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +32,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -90,6 +94,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary&quot;: &quot;PHPUnit&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -101,6 +106,21 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\Diploma\CodeBo-The-Game\scripts\gameobject" />
     </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.Test">
+    <configuration name="codebo.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/scripts/gameobject/codebo.js" working-dir="$PROJECT_DIR$/scripts/gameobject">
+      <method v="2" />
+    </configuration>
+    <configuration name="Test" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test" file="$PROJECT_DIR$/test/Test.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.Test" />
+        <item itemvalue="Node.js.codebo.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -118,13 +138,8 @@
       <workItem from="1667925538305" duration="7257000" />
       <workItem from="1667991121302" duration="4080000" />
       <workItem from="1668002047364" duration="7564000" />
-    </task>
-    <task id="LOCAL-00002" summary="First commit">
-      <created>1667912254736</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1667912254736</updated>
+      <workItem from="1668089691976" duration="2277000" />
+      <workItem from="1668444412889" duration="1211000" />
     </task>
     <task id="LOCAL-00003" summary="Edit pics">
       <created>1667913637628</created>
@@ -462,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668026218679</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Small fix">
+      <created>1668089764906</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1668089764906</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

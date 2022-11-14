@@ -353,8 +353,6 @@ Animation.prototype.autoSize = function (type) {
 
 //gameobject here
 function GameObject(animations, x, y, classename, w, h, r, z) {
-    //this.sprite = null;
-
     this.x = 0;
     if (x != undefined)
         this.x = x;
